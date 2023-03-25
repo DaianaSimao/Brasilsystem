@@ -24,5 +24,5 @@ when 19
     puts "Campinas"
     
 else
-    puts "Codigo inválido"
+    puts "DDD não cadastrado"
 end
