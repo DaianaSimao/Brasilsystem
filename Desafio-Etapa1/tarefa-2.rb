@@ -2,6 +2,6 @@
 #inversa
 
 
-palavra = gets.chomp.to_s #recebe o nome e retorna uma nova string sem separador de registros
+palavra = gets.chomp.to_s
 
-puts "#{palavra.reverse}" # O metodo reverse retorna a string ao contrario
+puts "#{palavra.reverse}"
