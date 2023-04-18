@@ -8,10 +8,14 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.4",
     "esbuild": "^0.17.15",
-    "sass": "^1.60.0"
+    "sass": "^1.60.0",
+    "cable_ready": "5.0.0-rc2",
+    "stimulus_reflex": "3.5.0-rc2",
+    "esbuild-rails": "^1.0.3"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+    "build": "node esbuild.config.mjs",
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:default": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
   }
 }

@@ -1,14 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<%# Renderiza o formulario %>
+<div class="container-fluid">
+  <h1>Solicitações de Livros</h1><br>
 
-<h1>Book</h1>
+  <div id="new_book">
+    <%= render "books/form",book: Book.new %>
+  </div>
 
-<div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
-  <% end %>
+    <div class="container-fluid text-center">
+      <%= image_tag 'book'%>
+      <h1>Tabela de Solicitação</h1>
+    </div>
+
+    <%# Remderiza o layout da tabela dos livros usando Hotwire %>
+    <%= turbo_stream_from "books" %> 
+    <%= turbo_frame_tag "books" do %>
+      <div id="books" class="min-w-full">
+        <%=  render @books %>
+      </div>
+    <%end%>
+  </div>
 </div>
-
-<%= link_to "New book", new_book_path %>

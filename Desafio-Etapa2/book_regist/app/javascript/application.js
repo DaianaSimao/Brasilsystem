@@ -2,8 +2,44 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import * as bootstrap from "bootstrap"
+import "./config"
+import "./channels"
 
-let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))  
-let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {  
-  return new bootstrap.Popover(popoverTriggerEl)  
-}) 
+
+function startTimer(duration, display) {
+
+    var timer = duration, minutes, seconds;
+
+    setInterval(function () {
+
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = 0;
+            document.querySelector("#vinculo").disabled = true;
+            document.querySelector("#autor").disabled = true;
+            document.querySelector("#issn").disabled = true;
+            document.querySelector("#editora").disabled = true;
+            document.querySelector("#titutlo").disabled = true;
+            document.querySelector("#edicao").disabled = true;
+            document.querySelector("#ano").disabled = true;
+            document.querySelector("#button").disabled = true;
+            display.textContent = 'Timeout';
+            console.log('ok');
+        }
+
+    }, 1000);
+}
+window.onload = function () {
+
+    var duration = (2 * 10 ) - 1;
+    var display = document.querySelector("#timer"); 
+
+    startTimer(duration, display);
+}

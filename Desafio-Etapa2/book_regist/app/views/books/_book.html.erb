@@ -1,37 +1,32 @@
-<div id="<%= dom_id book %>">
-  <p>
-    <strong>Vinculo:</strong>
-    <%= book.vinculo %>
-  </p>
+<%= turbo_stream_from book %>
+<%= turbo_frame_tag book do %>
+    <div class="container-fluid text-center bg-book rounded">
+        <div id="<%= dom_id book %>">
+            <div class="row">
+                <div class="col-6 col-sm-3"><strong>Vinculo: </strong>
+                <%=book.vinculo%></div>
+                <div class="col-6 col-sm-3"><strong>Titulo: </strong>
+                    <%= book.titutlo%></div>
+                <div class="col-6 col-sm-3"><strong>Autor: 
+                    </strong><%= book.autor%></div>
+                <hr class="hr1">
+                <div class="col-6 col-sm-3"><strong>Edição: </strong>
+                    <%= book.edicao%></div>
+                <div class="col-6 col-sm-3"><strong>Issn: </strong>
+                    <%= book.issn%></div>
+                <div class="col-6 col-sm-3"><strong>Ano: </strong>
+                    <%= book.ano%></div>
+                <div class="col-6 col-sm-3"><strong>Editora: </strong>
+                    <%= book.editora%></div>
+                <hr class="hr1">
+            </div>
+            <%= button_to 'Excluir livro', book, method: :delete, form: { data: { turbo_confirm: "Tem certeza que deseja exluir esse livro?" } }, class: "btn btn-destroy" %>
+            <hr>
+        </div>
+    </div>
 
-  <p>
-    <strong>Titutlo:</strong>
-    <%= book.titutlo %>
-  </p>
 
-  <p>
-    <strong>Autor:</strong>
-    <%= book.autor %>
-  </p>
+<%end%>
 
-  <p>
-    <strong>Edicao:</strong>
-    <%= book.edicao %>
-  </p>
+   
 
-  <p>
-    <strong>Issn:</strong>
-    <%= book.issn %>
-  </p>
-
-  <p>
-    <strong>Ano:</strong>
-    <%= book.ano %>
-  </p>
-
-  <p>
-    <strong>Editora:</strong>
-    <%= book.editora %>
-  </p>
-
-</div>

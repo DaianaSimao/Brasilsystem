@@ -12,7 +12,6 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    @book = Book.new
   end
 
   # GET /books/1/edit
@@ -25,10 +24,10 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to book_url(@book), notice: "Book was successfully created." }
+        format.html { redirect_to "/books/", notice: "Livro Solicitado com sucesso!" }
         format.json { render :show, status: :created, location: @book }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html {redirect_to "/books/", alert:"Os seguintes campos não foram preenchidos ou estão incorretos: \n #{@book.errors.full_messages.to_sentence}"  }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
@@ -52,7 +51,7 @@ class BooksController < ApplicationController
     @book.destroy
 
     respond_to do |format|
-      format.html { redirect_to books_url, notice: "Book was successfully destroyed." }
+      format.html { redirect_to "/books/", notice: "Solicitação de livro excluida com sucesso!" }
       format.json { head :no_content }
     end
   end
