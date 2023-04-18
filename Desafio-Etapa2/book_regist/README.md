@@ -1,24 +1,31 @@
-# README
+# Projeto Solicitação de Livros - SPA
+### Aplicação par solicitação de livros, atraves de envio de formulario com tempo de expiração, e validação de campos em singlepage, para facil visualização do usuario aos registros solicitados.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Things you may want to cover:
+### Dependencies
+* Ruby version - 3.0.0
+* Rails -  7.0.0
+* Bootstrap - ^5.2.3
+* Hotwired/stimulus - ^3.2.1",
+* Hotwired/turbo-rails": "^7.3.0"
+* InMemory - * gem - redis ~> 4.0
 
-Things you may want to cover:
+### GEM
+*  i18n
+*  stimulus_reflex - 3.5.0
+*  turbo-rails ~> 1.0.0
+*  action-cable-redis-backport ~> 1
+## Database creation
+*  sqlite3 ~> 1.4
 
-* Ruby version
+## ✒️ Autores
 
-* System dependencies
+* **Desenvolvido por**  - [Daiana Simão](https://github.com/DaianaSimao)
 
-* Configuration
+## 📄 Licença
 
-* Database creation
+Este projeto está sob a licença (DaianaSimão) - veja o arquivo [LICENSE.md](https://github.com/DaianaSimao/Portfolio/blob/main/LICENSE) para mais detalhes.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 🎁 Considerações
+Amei construir essa aplicação, a contribuição aos meus conhecimentos foram enriquecedoras, abstrai conceitos novos, implementações diferentes, e novas ferramentas
+que com todas certeza adotarei em futuros projetos.
