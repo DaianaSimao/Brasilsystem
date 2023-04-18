@@ -1,5 +1,5 @@
 # Projeto Solicitação de Livros - SPA
-### Aplicação par solicitação de livros, atraves de envio de formulario com tempo de expiração, e validação de campos em singlepage, para facil visualização do usuario aos registros solicitados.
+### Aplicação para solicitação de livros, atraves de envio de formulario com tempo de expiração, e validação de campos em singlepage, para facil visualização do usuario aos registros solicitados.
 
 # Things you may want to cover:
 ### Dependencies
